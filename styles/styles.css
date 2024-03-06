@@ -184,6 +184,30 @@ main {
 
 .main-btns a:nth-child(2) {
 	background-color: var(--green-clr);
+	position: relative;
+}
+
+.main-btns a:nth-child(2) span {
+	z-index: 10;
+	position: relative;
+}
+
+.main-btns a:nth-child(2)::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--red-clr);
+	height: 100%;
+	color: white;
+	transition: all 250ms ease;
+	transform: scaleY(0);
+	transform-origin: 100% 0%;
+}
+
+.main-btns a:nth-child(2):hover::after {
+	transform: scale(1);
 }
 
 .main-content:hover .main-side-btns {
@@ -283,23 +307,32 @@ main {
 	color: var(--light-gray-clr);
 	font-weight: 600;
 	position: relative;
-	padding: 8px 0;
+	padding: 12px 0;
 	cursor: pointer;
 }
 
 .our-product-categories span.active {
 	color: var(--green-clr);
-	border-bottom: 2px solid var(--green-clr);
+}
+
+.our-product-categories span.active::before {
+	content: '';
+	width: 100%;
+	height: 6px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-image: url('../images/border-wave.png');
 }
 
 .our-product-categories span:not(:last-child):after {
 	content: "";
 	position: absolute;
-	top: 0;
+	top: 2px;
 	right: -24px;
 	width: 2px;
 	height: 40px;
-	background-color: var(--light-gray-clr);
+	background-color: rgb(128, 128, 128, 0.25);
 }
 
 .our-product-items {
