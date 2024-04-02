@@ -430,6 +430,7 @@ main {
 	border: 1px solid rgb(223, 223, 223);
 	cursor: pointer;
 	margin-bottom: var(--fs-300);
+	min-height: 270px;
 }
 
 .our-product-item-img:hover .our-product-item-img-bg {
@@ -485,6 +486,10 @@ main {
 
 	.our-product-items {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.our-product-item-img {
+		min-height: initial;
 	}
 }
 
